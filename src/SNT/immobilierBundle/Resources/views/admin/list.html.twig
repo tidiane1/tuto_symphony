@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}immobilierBundle:admin:add{% endblock %}
+{% block body %}
+<table border=1>
+<tr>
+<th>id</th>
+<th>login</th>
+<th>nomcomplet</th>
+<th>datenais</th>
+<th>Editer</th>
+<th>Supprimer</th>
+
+</tr>
+{%for user in users%}
+<tr>
+<td>{{user.id}}</td>
+<td>{{user.login}}</td>
+<td>{{user.nomcomplet}}</td>
+<td>{{user.datenaiss|date("d/m/Y")}}</td>
+<td><a href="{{path('edit',{'id':user.id})}}">Editer</a></td>
+<td><a href="{{path('suppr',{'id':user.id})}}">Supprimer</a></td>
+{% if user.etat=0 %}
+            <td>Inactif</td>
+            <td><a href="{{path('etat', {'id':user.id})}}">Activer</a></td>
+            {% else %}
+            <td>Actif</td>
+            <td><a href="{{path('etat', {'id':user.id})}}">Désactiver</a></td>
+            {% endif %}
+
+</tr>
+{%else%}
+<td colspan="6">Aucun utilisateur</td>
+
+{%endfor%}
+</table>
+{% endblock %}

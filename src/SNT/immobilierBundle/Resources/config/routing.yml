@@ -1,0 +1,31 @@
+immobilier_homepage:
+    path:     /
+    defaults: { _controller: immobilierBundle:Default:index }
+
+
+add:
+    path:     /user/add
+    defaults: { _controller: immobilierBundle:admin:add }
+
+list:
+    path:     /user/list
+    defaults: { _controller: immobilierBundle:admin:list }
+
+
+edit:
+    path:     /user/edit/{id}
+    defaults: { _controller: immobilierBundle:admin:edit }
+    requirements:
+        id: \d+
+
+
+suppr:
+    path:     /user/suppr/{id}
+    defaults: { _controller: immobilierBundle:admin:suppr }
+    requirements:
+        id: \d+
+
+
+search:
+    path:    /user/search
+    defaults: { _controller: immobilierBundle:admin:search}

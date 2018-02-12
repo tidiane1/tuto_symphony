@@ -1,0 +1,4 @@
+services:
+#    immobilier.example:
+#        class: SNT\immobilierBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,7 @@
+immobilier:
+    resource: "@immobilierBundle/Resources/config/routing.yml"
+    prefix:   /immobilier
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
